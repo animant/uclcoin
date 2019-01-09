@@ -273,4 +273,4 @@ class BlockChain(object):
     def pending_transactions(self) -> Iterator[Transaction]:
         if self.mongo:
             return (Transaction.from_dict(t) for t in self._mpending_transactions())
-        return (t for t in self.pending_transactions)
+        return (t for t in self._pending_transactions)
